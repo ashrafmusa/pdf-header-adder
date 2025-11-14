@@ -1,0 +1,5 @@
+{
+  "name": "PDF Header Adder",
+  "description": "An application to easily add a header image to each page of a PDF file and then print or download it.",
+  "requestFramePermissions": []
+}
