@@ -1,20 +1,64 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# PDF Header Adder
 
-# Run and deploy your AI Studio app
+An Electron-based desktop application to add custom headers to PDF files with image overlay capabilities.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1vyU5s4IoY8RqBVGmpzPDPgOGJrNBNraw
+- Add custom image headers to PDF files
+- Adjust header position (left, center, right)
+- Control header opacity and scale
+- Live PDF preview
+- Cross-platform support (Windows, macOS, Linux)
 
-## Run Locally
+## Development
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js v20 or higher
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. In a separate terminal, start the Electron app:
+   ```bash
+   npm start -- --dev
+   ```
+
+## Building
+
+Build the application for your platform:
+
+```bash
+npm run build
+npm run package
+```
+
+This will create a distributable application in the `release/` directory.
+
+## Deployment
+
+The application uses GitHub Actions for automated builds and releases:
+
+- **Continuous Integration**: Builds are automatically triggered on pushes to `main`/`master` branches
+- **Automated Releases**: Create a git tag starting with `v` (e.g., `v1.0.0`) to trigger an automated release
+- **Multi-platform**: Builds are created for Windows (NSIS installer), macOS (DMG), and Linux (AppImage)
+
+### Creating a Release
+
+1. Update the version in `package.json`
+2. Commit the changes
+3. Create and push a tag:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+4. GitHub Actions will automatically build and create a release with installers for all platforms
+
+## License
+
+See [LICENSE](LICENSE) file for details.
